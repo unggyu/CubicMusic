@@ -9,9 +9,14 @@ public class Note : MonoBehaviour
 
     Image noteImage;
 
-    private void Start()
+    private void OnEnable()
     {
-        noteImage = GetComponent<Image>();
+        if (noteImage == null)
+        {
+            noteImage = GetComponent<Image>();
+        }
+
+        noteImage.enabled = true;
     }
 
     // Update is called once per frame

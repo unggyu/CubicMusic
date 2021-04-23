@@ -124,6 +124,54 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &13027282
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 13027284}
+  - component: {fileID: 13027283}
+  m_Layer: 0
+  m_Name: ObjectPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &13027283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13027282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b7554f29c65a9342b1054d17911c5c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectInfo:
+  - goPrefab: {fileID: 2041796062846701013, guid: 9a3582fbaec01804489bb56115e16445,
+      type: 3}
+    count: 15
+    tfPoolParent: {fileID: 777963236}
+--- !u!4 &13027284
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13027282}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 536.03394, y: 1396.5782, z: -718.23785}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &468807794
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,7 +571,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bpm: 120
   tfNoteAppear: {fileID: 1002397796}
-  goNote: {fileID: 2041796062846701013, guid: 9a3582fbaec01804489bb56115e16445, type: 3}
 --- !u!61 &777963238
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1488,6 +1535,7 @@ MonoBehaviour:
   judgementSprite:
   - {fileID: 21300000, guid: e4ee73b7e9dc7c741ad847b05ec82930, type: 3}
   - {fileID: 21300000, guid: 255e1b800ecd56f45a8d4af9ac592ddc, type: 3}
+  - {fileID: 21300000, guid: 3873161433b49b1489301ba2e217c8d6, type: 3}
   - {fileID: 21300000, guid: 33b37f29e8833c841a28c11abc847ce8, type: 3}
   - {fileID: 21300000, guid: c012edd5c3aa965439a21c55cdaa6837, type: 3}
 --- !u!1 &1667511896

@@ -6,7 +6,6 @@ public class NoteManager : MonoBehaviour
     double currentTime = 0d;
 
     [SerializeField] Transform tfNoteAppear = null;
-    [SerializeField] GameObject goNote = null;
 
     TimingManager theTimingManager;
     EffectManager theEffectManager;
@@ -24,8 +23,9 @@ public class NoteManager : MonoBehaviour
 
         if (currentTime >= 60d / bpm)
         {
-            var t_note = Instantiate(goNote, tfNoteAppear.position, Quaternion.identity);
-            t_note.transform.SetParent(transform);
+            var t_note = ObjectPool.instance.noteQueue.Dequeue();
+            t_note.transform.position = tfNoteAppear.position;
+            t_note.SetActive(true);
             theTimingManager.boxNoteList.Add(t_note);
             currentTime -= 60d / bpm;
         }
@@ -41,7 +41,8 @@ public class NoteManager : MonoBehaviour
             }
 
             theTimingManager.boxNoteList.Remove(collision.gameObject);
-            Destroy(collision.gameObject);
+            ObjectPool.instance.noteQueue.Enqueue(collision.gameObject);
+            collision.gameObject.SetActive(false);
         }
     }
 }
