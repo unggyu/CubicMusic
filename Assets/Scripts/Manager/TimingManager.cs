@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,6 +12,8 @@ public class TimingManager : MonoBehaviour
     EffectManager theEffect;
     ScoreManager theScoreManager;
     ComboManager theComboManager;
+    StageManager theStageManager;
+    PlayerController thePlayer;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,8 @@ public class TimingManager : MonoBehaviour
         theEffect = FindObjectOfType<EffectManager>();
         theScoreManager = FindObjectOfType<ScoreManager>();
         theComboManager = FindObjectOfType<ComboManager>();
+        theStageManager = FindObjectOfType<StageManager>();
+        thePlayer = FindObjectOfType<PlayerController>();
 
         // 타이밍 박스 설정
         timingBoxs = new Vector2[timingRect.Length];
@@ -51,10 +54,20 @@ public class TimingManager : MonoBehaviour
                         // Bad가 아닌 경우에만 연출
                         theEffect.NoteHitEffect();
                     }
-                    theEffect.JudgementEffect(x);
 
-                    // 점수 증가
-                    theScoreManager.IncreaseScore(x);
+                    if (CheckCanNextPlate())
+                    {
+                        // 점수 증가
+                        theScoreManager.IncreaseScore(x);
+                        // 판때기 등장
+                        theStageManager.ShowNextPlate();
+                        theEffect.JudgementEffect(x);
+                    }
+                    else
+                    {
+                        theEffect.JudgementEffect(5);
+                    }
+
                     return true;
                 }
             }
@@ -62,6 +75,24 @@ public class TimingManager : MonoBehaviour
 
         theComboManager.ResetCombo();
         theEffect.JudgementEffect(timingBoxs.Length);
+        return false;
+    }
+
+    bool CheckCanNextPlate()
+    {
+        if (Physics.Raycast(thePlayer.destPos, Vector3.down, out RaycastHit t_hitInfo, 1.1f))
+        {
+            if (t_hitInfo.transform.CompareTag("BasicPlate"))
+            {
+                var t_plate = t_hitInfo.transform.GetComponent<BasicPlate>();
+                if (t_plate.flag)
+                {
+                    t_plate.flag = false;
+                    return true;
+                }
+            }
+        }
+
         return false;
     }
 }
