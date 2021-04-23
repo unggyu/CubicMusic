@@ -24,11 +24,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Transform realCube = null;
 
     TimingManager theTimingManager;
+    CameraController theCam;
 
     // Start is called before the first frame update
     void Start()
     {
         theTimingManager = FindObjectOfType<TimingManager>();
+        theCam = FindObjectOfType<CameraController>();
     }
 
     // Update is called once per frame
@@ -62,6 +64,7 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(MoveCo());
         StartCoroutine(SpinCo());
         StartCoroutine(RecoilCo());
+        StartCoroutine(theCam.ZoomCam());
     }
 
     IEnumerator MoveCo()
