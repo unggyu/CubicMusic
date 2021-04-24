@@ -242,7 +242,7 @@ PrefabInstance:
     - target: {fileID: 8108946156618407066, guid: 311926a8bbe62de4ba41f0cbbaab8ed9,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 311926a8bbe62de4ba41f0cbbaab8ed9, type: 3}
@@ -5629,6 +5629,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2087121591}
   - component: {fileID: 2087121590}
+  - component: {fileID: 2087121592}
   m_Layer: 0
   m_Name: DeadZone
   m_TagString: Untagged
@@ -5663,6 +5664,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2087121592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087121589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66d0a2f765e2dc348aa230a163b2d84b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &882096837769200078
 PrefabInstance:
   m_ObjectHideFlags: 0
