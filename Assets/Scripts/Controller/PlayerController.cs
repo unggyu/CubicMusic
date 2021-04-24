@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static bool s_canPressKey = true;
+
     // ¿Ãµø
     [SerializeField] float moveSpeed = 3;
     Vector3 dir = new Vector3();
@@ -38,7 +40,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.W))
         {
-            if (canMove)
+            if (canMove && s_canPressKey)
             {
                 Calc();
 
