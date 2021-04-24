@@ -2490,6 +2490,8 @@ MonoBehaviour:
   - {fileID: 1489235470}
   - {fileID: 2024379039}
   - {fileID: 1908490955}
+  shieldIncreaseCombo: 5
+  shieldGauge: {fileID: 1784572302}
   playerMesh: {fileID: 729678041}
 --- !u!1 &920022190
 GameObject:
@@ -4844,7 +4846,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1489235471
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6215,7 +6217,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1908490956
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6791,7 +6793,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2024379040
 RectTransform:
   m_ObjectHideFlags: 0
