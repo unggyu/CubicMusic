@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     PlayerController thePlayer;
     StageManager theStage;
     NoteManager theNote;
+    Result theResult;
+
     [SerializeField] CenterFlame theMusic = null;
 
     // Start is called before the first frame update
@@ -29,6 +31,7 @@ public class GameManager : MonoBehaviour
         theTiming = FindObjectOfType<TimingManager>();
         theStatus = FindObjectOfType<StatusManager>();
         thePlayer = FindObjectOfType<PlayerController>();
+        theResult = FindObjectOfType<Result>();
     }
 
     public void GameStart(int p_songNum, int p_bpm)
@@ -47,6 +50,7 @@ public class GameManager : MonoBehaviour
         theTiming.Initialized();
         theStatus.Initialized();
         thePlayer.Initialized();
+        theResult.SetCurrentSong(p_songNum);
 
         AudioManager.instance.StopBgm();
 
