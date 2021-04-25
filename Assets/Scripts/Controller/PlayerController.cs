@@ -45,17 +45,20 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckFalling();
-
-        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.W))
+        if (GameManager.instance.isStartGame)
         {
-            if (canMove && s_canPressKey && !isFalling)
-            {
-                Calc();
+            CheckFalling();
 
-                if (theTimingManager.CheckTiming())
+            if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.W))
+            {
+                if (canMove && s_canPressKey && !isFalling)
                 {
-                    StartAction();
+                    Calc();
+
+                    if (theTimingManager.CheckTiming())
+                    {
+                        StartAction();
+                    }
                 }
             }
         }
