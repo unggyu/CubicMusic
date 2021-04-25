@@ -115,4 +115,12 @@ public class TimingManager : MonoBehaviour
         judgementRecord[4]++; // 판정 기록
         theStatusManager.ResetShieldCombo();
     }
+
+    public void Initialized()
+    {
+        for (int i = 0; i < judgementRecord.Length; i++)
+        {
+            judgementRecord[i] = 0;
+        }
+    }
 }

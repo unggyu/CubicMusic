@@ -4,10 +4,9 @@ public class CenterFlame : MonoBehaviour
 {
     bool musicStart = false;
 
-    // Update is called once per frame
-    void Update()
+    public void ResetMusic()
     {
-        
+        musicStart = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

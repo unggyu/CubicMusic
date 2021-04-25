@@ -24,6 +24,8 @@ public class Result : MonoBehaviour
 
     public void ShowResult()
     {
+        FindObjectOfType<CenterFlame>().ResetMusic();
+
         AudioManager.instance.StopBgm();
 
         goUI.SetActive(true);
