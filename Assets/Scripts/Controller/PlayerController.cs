@@ -147,6 +147,7 @@ public class PlayerController : MonoBehaviour
     public void ResetFalling()
     {
         theStatus.DecreaseHp(1);
+        AudioManager.instance.PlaySfx("Falling");
 
         if (!theStatus.IsDead())
         {
